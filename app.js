@@ -28,12 +28,30 @@
 // items[0].style.fontWeight = '900';
 
 // document.getElementsByClassName()
-var items = document.getElementsByClassName('list-group-item');
-console.log(items);
-console.log(items[1]);
 
-items[2].style.backgroundColor = 'green';
 
-for(let i=0 ; i< items.length ; i++){
-    items[i].style.fontWeight = 'bold';
-}
+// var items = document.getElementsByClassName('list-group-item');
+// console.log(items);
+// console.log(items[1]);
+
+// items[2].style.backgroundColor = 'green';
+
+// for(let i=0 ; i< items.length ; i++){
+//     items[i].style.fontWeight = 'bold';
+// }
+
+// getElementByTagName()
+
+
+var items= document.getElementsByClassName('list-group1');
+items[0].style.backgroundColor = 'blue' ;
+
+var lis = document.getElementsByTagName('li') ;
+
+for(let i=0 ; i<lis.length ; i++){
+    lis[i].style.fontWeight = 'bold';
+};
+
+for(let i=0 ; i<lis.length ; i++){
+    lis[i].style.color = 'green';
+};

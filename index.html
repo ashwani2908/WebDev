@@ -4,22 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Storing Object</title>
+    <title>Appointment Booking App</title>
 </head>
 <body>
-    <h1>Storing Object to the localStorage</h1>
+    <h1>Appointment Booking App</h1>
+    <form action="#">
+        <input type="text" id="name" required>
+        <input type="text" id="email" required>
+        <input type="submit" id="submit" value="Submit" >
+    </form>
+    <ul id="container"></ul>
 
-    <script>
-        let obj = {
-            name: 'Ashwani',
-            age: 24
-            
-        }
-
-        const stringify = localStorage.setItem('Detail',(JSON.stringify(obj)));
-
-        
-
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>

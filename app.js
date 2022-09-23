@@ -13,9 +13,7 @@ function submitBtn(e) {
         };
 
         let stringObj = JSON.stringify(object);
-        localStorage.setItem('userDetail', stringObj);
-
-        console.log(stringObj);
+        localStorage.setItem('userDetail'+ emailId, stringObj);
 
         addNewDetail(object);
         
@@ -26,9 +24,48 @@ function addNewDetail(object){
     const ul = document.getElementById('container');
     const li = document.createElement('li');
     
-    li.appendChild(document.createTextNode(object.name + " " + object.emailId));
+    li.appendChild(document.createTextNode(object.name + " | " + object.emailId + " "));
+        //Edit Function
+        let editBtn = document.createElement('input');
+        editBtn.id = 'edit';
+        editBtn.type = 'button';
+        editBtn.value = 'Edit';
+        editBtn.addEventListener('click', ()=>{
+            document.getElementById('name').value = object.name;
+            document.getElementById('email').value = object.emailId;
+            li.remove();
+        });
 
+        
+        li.appendChild(editBtn);
+        
+        // Delete Buttun
+        let deleteBtn = document.createElement('input');
+        deleteBtn.id = 'delete';
+        deleteBtn.type = 'button';
+        deleteBtn.value = 'Delete';
+        deleteBtn.addEventListener('click', ()=>{
+            localStorage.removeItem('userDetail'+ object.emailId);
+            li.remove();
+        });
+        
+        li.appendChild(deleteBtn);
+
+
+    console.log(li);
     ul.appendChild(li);
-    console.log(ul);
-}
+
+};
+
+
+
+
+
+// function deleteDetail(e,object){
+//     e.preventDefault();
+//     localStorage.removeItem('userDetail'+ object.emailId);
+    
+// }
+
+
 

@@ -25,6 +25,16 @@ function submitBtn(e) {
     }
 };
 
+window.addEventListener("DOMContentLoaded", () =>{
+    axios.get("https://crudcrud.com/api/ba09eebf70d64789bf84f027ccd48e04/appointmentapp")
+            .then(res => {
+                console.log(res.data)
+                for(var i=0; i< res.data.length;i++){
+                    addNewDetail(res.data[i])
+                }
+            }).catch(err => console.log(err))
+})
+
 function addNewDetail(object){
     const ul = document.getElementById('container');
     const li = document.createElement('li');
